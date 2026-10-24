@@ -1,166 +1,162 @@
-# ⚙️ BACKEND — CREDBUD API Server
+# 💳 CREDBUD — Frontend
 
-> A Node.js and Express backend providing REST API endpoints for user management, authentication, attendance, grants, subjects, posts, and administrative operations.
+> A React-based web dashboard for CREDBUD, built with Chakra UI and modern JavaScript libraries for data visualization, authentication integration, and interactive user interfaces.
 
-![Node.js](https://img.shields.io/badge/Node.js-22.16.0-339933?logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-Backend-000000?logo=express&logoColor=white)
-![REST API](https://img.shields.io/badge/API-REST-blue)
-![Environment](https://img.shields.io/badge/Environment-Node.js-green)
-![License](https://img.shields.io/badge/License-Not%20Specified-lightgrey)
+![React](https://img.shields.io/badge/React-17.0.2-61DAFB?logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black)
+![Chakra UI](https://img.shields.io/badge/Chakra%20UI-1.8.8-319795?logo=chakraui&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-10.14.1-FFCA28?logo=firebase&logoColor=black)
+![Create React App](https://img.shields.io/badge/Create%20React%20App-5.0.0-09D3AC?logo=createreactapp&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## 📖 Overview
 
-**BACKEND** is a Node.js backend project built using Express.js. The application exposes REST API routes for several modules, including user management, authentication, attendance, grants, subjects, posts, and administration.
+**CREDBUD Frontend** is a React application built with Create React App and Chakra UI. It provides the client-side foundation for the CREDBUD platform, with supporting libraries for API communication, authentication integration, data visualization, QR/barcode scanning, calendar interfaces, and spreadsheet processing.
 
-The codebase uses middleware for JSON request parsing, cookie handling, cross-origin resource sharing (CORS), request logging, and user-type checks. It also includes HTTPS server configuration for non-production environments and a separate production startup path.
+The application uses reusable UI components and frontend libraries to support interactive dashboard experiences.
 
-The repository provides the server-side foundation for the **CREDBUD** application, as indicated by its API health-check response.
+This repository contains the frontend codebase. Backend services and API endpoints are maintained separately.
 
-🔗 **GitHub Repository:** [pratikabhang/BACKEND](https://github.com/pratikabhang/BACKEND)
+🔗 **Frontend Repository:** [pratikabhang/FRONTEND](https://github.com/pratikabhang/FRONTEND)
 
-## ✨ Features
+🔗 **Related Backend:** [pratikabhang/BACKEND](https://github.com/pratikabhang/BACKEND)
 
-- **User Management:** Provides a dedicated route group for user-related operations.
-- **Authentication:** Separates authentication endpoints from other application routes.
-- **Attendance Management:** Exposes endpoints through a dedicated attendance route group.
-- **Grant Management:** Organizes grant-related API operations separately.
-- **Subject Management:** Provides routes for subject-related operations.
-- **Posts and Administration:** Includes dedicated post and admin route groups.
-- **Middleware Integration:** Uses Express middleware for request parsing, cookies, CORS, and logging.
-- **HTTPS Development Support:** Configures an HTTPS server for non-production execution.
-- **Environment-Based Startup:** Selects the server startup behavior based on `NODE_ENV`.
+## ✨ Features and Capabilities
 
-The specific endpoint methods, authorization rules, database operations, and request schemas depend on the implementation in the corresponding route and controller files.
+The project dependencies provide the following capabilities:
+
+- **Component-Based UI:** React enables reusable components and maintainable interface development.
+- **UI Components and Theming:** Chakra UI provides accessible components and styling utilities.
+- **API Communication:** Axios supports HTTP requests to backend services.
+- **Authentication Integration:** Firebase provides client-side SDK capabilities for supported authentication and application services.
+- **Data Visualization:** ApexCharts and Chart.js integrations support interactive charts and graphical representations.
+- **QR and Barcode Scanning:** Libraries such as `html5-qrcode`, `instascan`, and `@thewirv/react-barcode-scanner` provide scanning capabilities.
+- **Calendar Interfaces:** React Calendar supports date-based UI components.
+- **Spreadsheet Processing:** SheetJS (`xlsx`) enables reading and writing spreadsheet data.
+- **Routing:** React Router DOM supports client-side navigation.
+- **Animations and Icons:** Framer Motion and React Icons support interface animations and iconography.
+
+The availability of a library does not guarantee that every capability is implemented or enabled in the current application.
 
 ## 🛠️ Tech Stack
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)
+| Technology | Version | Purpose |
+|---|---|---|
+| React | 17.0.2 | Frontend framework |
+| JavaScript | ES6+ | Application logic |
+| Create React App | 5.0.0 | Development and build tooling |
+| Chakra UI | 1.8.8 | UI components and styling |
+| Firebase | 10.14.1 | Client-side Firebase integration |
+| Axios | 1.6.7 | HTTP requests |
+| React Router DOM | 5.3.x | Client-side routing |
+| ApexCharts | 3.35.2 | Interactive charts |
+| React Chart.js 2 | 5.2.x | Chart.js integration |
+| Framer Motion | 4.1.x | Animations |
+| HTML5 QR Code | 2.3.x | QR code scanning |
+| SheetJS (`xlsx`) | 0.18.x | Spreadsheet processing |
+| React Calendar | 3.7.x | Calendar UI |
+| React Icons | 4.3.x | Icon library |
 
-| Technology | Purpose |
-|---|---|
-| Node.js | JavaScript runtime |
-| Express.js | HTTP server and routing |
-| dotenv | Loads environment variables |
-| cors | Configures cross-origin resource sharing |
-| cookie-parser | Parses cookies from incoming requests |
-| Morgan | HTTP request logging |
-| Node.js `https` module | Creates an HTTPS server |
-| Node.js `fs` module | Reads certificate and key files |
-| Netlify configuration | Deployment-related configuration present in the repository |
-
-The repository's `.node-version` specifies **Node.js 22.16.0**. The complete dependency list and versions should be taken from `package.json` and the available lockfile, if any.
+Versions above reflect the declared dependency specifications in `package.json`; ranges using `^` may resolve to later compatible versions.
 
 ## 🏗️ Architecture
 
-The backend follows a modular Express.js architecture that separates route definitions, controllers, middleware, and utility functions.
+The frontend follows a component-based React architecture.
 
 ```text
-                 Client Application
-                        |
-                        v
-                   Express App
-                        |
-                        v
-                 Middleware Layer
-           +------------+-------------+
-           |            |             |
-           v            v             v
-         CORS        JSON Parser   Cookie Parser
-           |            |             |
-           +------------+-------------+
-                        |
-                        v
-                   API Router
-                        |
-      +-----------------+------------------+
-      |          |          |               |
-      v          v          v               v
-    Users      Auth     Attendance       Grants
-      |          |          |               |
-      +----------+----------+---------------+
-                        |
-                        v
-                    Controllers
-                        |
-                        v
-                   Application Logic
+                  User
+                   |
+                   v
+              React Interface
+                   |
+          +--------+---------+
+          |                  |
+          v                  v
+     UI Components       Page Routing
+          |                  |
+          +--------+---------+
+                   |
+                   v
+          Application Logic
+                   |
+       +-----------+-----------+
+       |           |           |
+       v           v           v
+     Axios      Firebase    UI Libraries
+       |
+       v
+  Backend REST API
+  (Separate Repository)
 ```
 
-### API Route Groups
+### Architectural Components
 
-The application registers the following route prefixes in `app.js`:
-
-| Route prefix | Module |
+| Component | Responsibility |
 |---|---|
-| `/api/v1/user` | User management |
-| `/api/v1/auth` | Authentication |
-| `/api/v1/attendance` | Attendance |
-| `/api/v1/grant` | Grants |
-| `/api/v1/admin` | Administrative operations |
-| `/api/v1/subjects` | Subject management |
-| `/api/v1/posts` | Posts |
+| React | Component rendering and application state |
+| Chakra UI | UI components, layout, and styling |
+| React Router | Client-side navigation |
+| Axios | Communication with backend APIs |
+| Firebase SDK | Integration with configured Firebase services |
+| Chart libraries | Data visualization |
+| QR scanning libraries | QR and barcode scanning capabilities |
+| SheetJS | Spreadsheet data processing |
 
-These prefixes identify route groups, not a complete list of individual endpoints.
+The exact page hierarchy, state-management approach, and API contracts should be verified against the implementation in `src/`.
 
 ## 🎯 Project Objectives
 
-- Provide a modular backend for the CREDBUD application.
-- Separate API route definitions from request-handling logic.
-- Organize application features into maintainable modules.
-- Support environment-specific server configuration.
-- Apply reusable middleware for common HTTP concerns.
-- Provide health-check endpoints for basic server availability testing.
+- Provide a modular React frontend for CREDBUD.
+- Build interactive interfaces using reusable UI components.
+- Integrate frontend functionality with backend services.
+- Support data visualization and structured data presentation.
+- Provide reusable capabilities for scanning, calendar interfaces, and spreadsheet processing.
+- Maintain a development workflow based on npm and Create React App.
 
 ## 📂 Project Structure
 
 ```text
-BACKEND/
-├── .netlify/          # Netlify-related configuration
-├── controllers/       # Request-handling logic
-├── middleware/        # Request-processing middleware
-├── routes/            # API route definitions
-├── utils/             # Shared utility functions
-├── app.js             # Express application entry point
-├── package.json       # Project metadata and dependencies
-├── .node-version      # Node.js version specification
-├── .envbak            # Environment-related backup file
-├── cert.pem           # SSL certificate file
-├── key.pem            # SSL private key file
-├── appmap.yml         # Application mapping configuration
-├── .gitignore         # Git ignore rules
-└── .gitattributes     # Git file-handling configuration
+FRONTEND/
+├── .netlify/             # Netlify-related configuration
+├── public/               # Static assets
+├── src/                  # React application source
+├── .env                  # Environment configuration; keep secrets private
+├── .gitignore            # Git ignore rules
+├── .gitattributes        # Git file-handling configuration
+├── CHANGELOG.md          # Project change history
+├── LICENSE               # MIT license file
+├── cert.pem              # TLS certificate file
+├── key.pem               # TLS private key file
+├── jsconfig.json         # JavaScript project configuration
+└── package.json          # Dependencies and npm scripts
 ```
 
-**Security note:** The repository listing includes `key.pem` and `cert.pem`. Never publish a real production private key. If `key.pem` contains an actual private key that has been exposed publicly, replace it and review the repository history.
+The `src/` directory contains the application code, while `public/` contains static assets. The precise component and page organization can be explored directly in the repository.
 
 ## 💻 Prerequisites
 
-Before running the backend, install:
+Install the following tools before starting development:
 
-- [Node.js 22.16.0](https://nodejs.org/)
-- npm, included with Node.js
-- Git
-- Valid local TLS certificate and private key files if using the non-production HTTPS startup path
+- **Node.js:** A version compatible with React 17 and the project's dependencies.
+- **npm:** Included with Node.js.
+- **Git:** For cloning and version control.
+- A modern web browser.
 
-Check the installed versions:
+Check your installed versions:
 
 ```bash
 node --version
 npm --version
+git --version
 ```
-
-The Node.js version should match the version specified in `.node-version`.
 
 ## 🚀 Installation and Setup
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/pratikabhang/BACKEND.git
-cd BACKEND
+git clone https://github.com/pratikabhang/FRONTEND.git
+cd FRONTEND
 ```
 
 ### 2. Install Dependencies
@@ -169,172 +165,127 @@ cd BACKEND
 npm install
 ```
 
-This installs the dependencies declared in `package.json`.
+This installs the dependencies defined in `package.json`.
 
 ### 3. Configure Environment Variables
 
-The application loads environment variables through `dotenv`.
+Inspect the source code to identify the environment variables required by the application.
 
-Create a local `.env` file using the variable names required by the application:
+Create a local `.env` file with the actual variables expected by the frontend. For example, if the application uses a backend API URL, its configuration could be:
 
 ```env
-NODE_ENV=development
-PORT=443
+REACT_APP_API_URL=http://localhost:3000
 ```
 
-These values illustrate the startup configuration visible in `app.js`. Review the route handlers, controllers, and configuration before adding any database credentials, authentication secrets, or other variables.
+This variable name is an example only; confirm the name used by the application before relying on it.
 
-Do not commit `.env` files containing sensitive values.
+For Create React App, custom frontend environment variables generally need the `REACT_APP_` prefix. Variables embedded into the browser bundle are **not secrets** and must never contain private API credentials or server-side keys.
 
-### 4. Configure HTTPS for Local Development
+### 4. Start the Development Server
 
-The non-production startup path reads:
+The `start` script in `package.json` enables HTTPS and references `cert.pem` and `key.pem`.
 
-```text
-key.pem
-cert.pem
-```
-
-Ensure valid local certificate and private key files exist at the paths expected by `app.js`.
-
-For local development, use certificates appropriate for your development environment. Never use a publicly exposed private key in production.
-
-### 5. Start the Server
-
-Inspect `package.json` to confirm the available npm scripts. If no suitable start script exists, the application entry point can be run directly:
+Run:
 
 ```bash
-node app.js
+npm start
 ```
 
-The server uses HTTPS in non-production mode and listens on the configured `PORT`, defaulting to `443`. In production mode, it uses `app.listen()` with `process.env.PORT`.
+Ensure the required development certificates exist and are configured correctly. The application should open in your browser using the development server URL shown in the terminal, typically:
 
-**Important:** Set the environment variables and certificate files correctly before starting the application.
+[https://localhost:3000](https://localhost:3000)
 
-## ▶️ API Usage
+Accept a local certificate warning only when you understand that the certificate is intended for local development. Do not bypass certificate validation for public or production services.
 
-### Health Check
-
-The application defines a root endpoint for checking server availability.
-
-**Request**
-
-```http
-GET /
-```
-
-**Example response**
-
-```json
-{
-  "message": "SERVER IS RUNNING. Try /api/v1/test"
-}
-```
-
-### API Test Endpoint
-
-**Request**
-
-```http
-GET /api/v1/test
-```
-
-**Example response**
-
-```json
-{
-  "message": "CREDBUD SERVER IS RUNNING"
-}
-```
-
-These health-check endpoints are defined directly in `app.js`.
-
-### Available API Route Prefixes
-
-The application registers the following API groups:
-
-```text
-/api/v1/user
-/api/v1/auth
-/api/v1/attendance
-/api/v1/grant
-/api/v1/admin
-/api/v1/subjects
-/api/v1/posts
-```
-
-To identify the available HTTP methods, parameters, request bodies, and responses for each route, inspect the files in `routes/` and their associated controllers.
-
-## 🔧 Development
-
-### Check Installed Dependencies
+### 5. Create a Production Build
 
 ```bash
-npm ls --depth=0
+npm run build
 ```
 
-### Check Node.js Version
+Create React App generates an optimized production bundle in the `build/` directory.
+
+### 6. Run Tests
 
 ```bash
-node --version
+npm test
 ```
 
-### Inspect Server Logs
+This invokes the configured Create React App test runner.
 
-Morgan is configured with the `tiny` logging format, which records HTTP request information in the server output.
+## ▶️ Usage
 
-### Test API Endpoints
+### Running the Frontend Locally
 
-Use a REST client such as Postman, Insomnia, or `curl` to test the health-check endpoints and the application routes.
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Configure the required environment variables.
+4. Ensure the backend and any required external services are available.
+5. Run `npm start`.
+6. Open the application URL displayed in the terminal.
+7. Explore the available pages and interact with the implemented features.
 
-For example, if the local HTTPS server is running with a trusted development certificate:
+### Connecting to the Backend
 
-```bash
-curl https://localhost:443/api/v1/test
-```
+The frontend has a related backend repository:
 
-If your development certificate is self-signed, configure trust for that certificate in your development environment instead of disabling TLS verification as a general practice.
+[**CREDBUD Backend**](https://github.com/pratikabhang/BACKEND)
+
+Before connecting the applications, confirm the backend's configured port, available routes, CORS settings, and required authentication headers. Configure the frontend's API base URL according to the actual Axios configuration.
+
+## 📊 Available npm Scripts
+
+The project's `package.json` defines the following scripts:
+
+| Command | Description |
+|---|---|
+| `npm start` | Starts the HTTPS development server |
+| `npm run build` | Creates a production build |
+| `npm test` | Runs the test runner |
+| `npm run eject` | Exposes the underlying Create React App configuration |
+| `npm run predeploy` | Runs the production build before deployment |
+| `npm run deploy` | Deploys the `build/` directory using GitHub Pages tooling |
+| `npm run sitemap` | Executes the sitemap-builder script |
+
+**Note:** The deployment scripts require their associated dependencies and configuration. Verify the target hosting platform before using them.
 
 ## 🔐 Security Considerations
 
-Before deploying this backend publicly:
+- **Private keys:** Never commit real TLS private keys. If `key.pem` contains an exposed private key, replace it and review repository history.
+- **Environment variables:** Remove exposed credentials from `.env`, rotate affected secrets, and use deployment-specific secret storage.
+- **Firebase configuration:** Apply appropriate Firebase security rules and restrictions. Client-side Firebase configuration does not replace server-side authorization.
+- **API security:** Validate permissions and sensitive operations on the backend rather than relying on frontend checks.
+- **Dependencies:** Review outdated packages and security advisories before production deployment.
+- **HTTPS:** Use properly managed certificates in production.
+- **User input:** Validate untrusted data before displaying it or processing uploaded spreadsheets.
 
-- Keep production credentials and authentication secrets outside source control.
-- Replace any exposed private keys and rotate affected credentials.
-- Validate incoming request bodies and query parameters.
-- Apply authentication and authorization to protected endpoints.
-- Restrict CORS origins to trusted frontend applications.
-- Disable verbose development behavior in production.
-- Configure HTTPS and secure cookie attributes appropriately.
-- Review dependency vulnerabilities regularly.
-- Ensure `NODE_ENV` and `PORT` are configured correctly for the deployment platform.
-
-## 🚀 Future Improvements
+## 🔮 Future Improvements
 
 Potential improvements include:
 
-- Document all API endpoints with OpenAPI/Swagger.
-- Add automated unit and integration tests.
-- Provide a sanitized `.env.example`.
-- Add structured error handling and consistent API response formats.
-- Introduce request validation for each route.
-- Add centralized logging and monitoring.
-- Configure a repeatable deployment workflow.
-- Add health checks suitable for production monitoring.
-- Document database technology and schemas after confirming the implementation.
+- Add component-level and integration tests.
+- Document the application's pages and navigation.
+- Add a sanitized `.env.example`.
+- Document backend API endpoints and request/response formats.
+- Improve error handling and loading states.
+- Add accessibility and responsive-design checks.
+- Upgrade legacy dependencies through a tested migration plan.
+- Configure continuous integration for builds and tests.
+- Review the QR scanning libraries and remove unused dependencies.
+- Document deployment and environment-specific configuration.
 
-These are suggested enhancements, not claims about existing functionality.
+These are suggested improvements, not claims about existing functionality.
 
 ## 🤝 Contributing
 
-Contributions and improvements are welcome.
+Contributions and suggestions are welcome.
 
 1. Fork the repository.
 2. Clone your fork:
 
    ```bash
-   git clone https://github.com/<your-username>/BACKEND.git
-   cd BACKEND
+   git clone https://github.com/<your-username>/FRONTEND.git
+   cd FRONTEND
    ```
 
 3. Create a feature branch:
@@ -343,36 +294,39 @@ Contributions and improvements are welcome.
    git checkout -b feature/your-feature-name
    ```
 
-4. Make your changes in the relevant routes, controllers, middleware, or utilities.
-5. Test the affected API behavior.
+4. Make your changes in the relevant React components or configuration files.
+5. Run tests and verify the production build.
 6. Commit your changes:
 
    ```bash
    git add .
-   git commit -m "Improve backend functionality"
+   git commit -m "Improve frontend functionality"
    ```
 
-7. Push the branch:
+7. Push your branch:
 
    ```bash
    git push origin feature/your-feature-name
    ```
 
-8. Open a pull request explaining the changes and tests performed.
+8. Open a pull request describing your changes and testing performed.
 
 ## 📄 License
 
-No repository-wide license has been confirmed. Until a `LICENSE` file is added, do not assume that the code may be freely redistributed or reused.
+The repository contains an MIT license file. The checked-in license text identifies **Horizon UI** as the copyright holder for the licensed material.
+
+Review the license and the provenance of the source code before redistributing the project. Ensure that original contributions and third-party assets retain their applicable copyright and licensing notices.
 
 ## 👨‍💻 Author
 
 **Pratik Abhang**
 
 - GitHub: [@pratikabhang](https://github.com/pratikabhang)
-- Repository: [BACKEND](https://github.com/pratikabhang/BACKEND)
+- Frontend Repository: [FRONTEND](https://github.com/pratikabhang/FRONTEND)
+- Related Backend: [BACKEND](https://github.com/pratikabhang/BACKEND)
 
 ---
 
 ⭐ If you find this project useful, consider starring the repository.
 
-*Modular APIs. Clear separation of concerns. Maintainable backend development.*
+*Build intuitive interfaces. Visualize data. Deliver a better user experience.*
